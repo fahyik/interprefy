@@ -1,0 +1,81 @@
+{% extends "tbox/base.html" %}
+{% load i18n %}
+{% load widget_tweaks %}
+{% load staticfiles %}
+
+{% block title %}{% trans "Room" %} {{ name }}{% endblock %}
+
+{% block body %}
+<div class="container">
+	<div class="row row-add">
+		<div class="col-sm-12">
+			<h3>Room {{ session.name }} {{ userprofile.function }}</h3>
+		</div>
+	</div>
+	<div class="row row-add ctrl-panel">
+		<div class="col-sm-12">
+			<h4>Control Panel</h4>
+		</div>
+		<div class="col-sm-3">
+			<button class="btn btn-ctrl btn-primary" id="start-subscribe">Subscribe-Only</button>
+		</div>
+		<!-- only show buttons if user is a publisher or moderator -->
+		{% if userprofile.function == "Pub" or userprofile.function == "Mod" %}
+		<div class="col-sm-3">			
+			<button class="btn btn-ctrl btn-primary" id="start-voice">Voice-Only</button>
+		</div>
+		<div class="col-sm-3">
+			<button class="btn btn-ctrl btn-primary" id="start-video">Video</button>
+		</div>
+		{% endif %}
+		<div class="col-sm-3">
+			<button class="btn btn-ctrl btn-danger" disabled="disabled" id="disconnect">Disconnect</button>
+		</div>
+	</div>
+	<div id="main-content" class="row row-add hidden">
+
+		<div class="col-sm-6">
+			<h4>Videos:</h3>
+			<div class="myVidBox">
+				<div id="myVid"></div>
+			</div>
+			<div class="subVidBox">
+				<div id="subVid"></div>
+			</div>
+		</div>
+
+		<div class="col-sm-6">
+		<div class="outbox" id="textchat">
+			<h4>Chat:</h4>
+			<div id="chat-history"></div>
+			<form class="form-group" id="form-chattext">
+				<input class="form-control" type="text" placeholder="Input text here.." id="msgTxt"></input>
+			</form>
+		</div>
+		</div>	
+
+	</div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'tbox/js/opentok.min.js' %}"></script>
+<script>
+var token = "{{ token }}";
+var session_id = "{{ session.session_id }}";
+var api_key = "{{ api_key }}";
+var user_function = "{{ userprofile.function }}";
+var username = "{{ user.username }}";
+</script>
+<script src="{% static 'tbox/js/session.js' %}"></script>
+<!-- 
+<script>
+$(window).on('beforeunload', function(){
+      return 'Are you sure you want to leave?';
+});
+
+$(window).on('unload', function(){
+});
+</script>
+ -->
+{% endblock %}

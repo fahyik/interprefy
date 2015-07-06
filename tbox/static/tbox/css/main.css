@@ -1,0 +1,187 @@
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+
+	font-weight: 300;
+	color: #FFF;
+}
+
+.btn {
+	font-weight: 300;
+}
+
+
+html {
+  	position: relative;
+  	width: 100%;
+	height: 100%;
+/* 	overflow: auto; */
+}
+
+body {
+
+	font-weight: 300;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	background-image: url('/static/tbox/images/interprefy_home.jpg');
+	background-size: 200%;
+	background-repeat: no-repeat;
+	background-position-x: 70%;
+	background-position-y: 30%;
+	position: relative;
+/* 	overflow: auto; */
+}
+
+.background {
+	background-color: rgba(211, 211, 211, 0.85);
+	width: 100%;
+	min-height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 150px;
+	padding-top: 100px;
+}
+
+
+
+.navbar {
+	padding: 15px; 0px;
+}
+
+.navbar-default {
+  background-color: rgba(231, 231, 231, 0);
+  border-color: rgba(231, 231, 231, 0.41);
+}
+
+.navbar-default .navbar-brand {
+  color: #FFF;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	margin-bottom: 50px;
+	margin-top: 200px;
+	font-weight: 300;
+}
+
+
+.table-choices {
+	table-layout: fixed; 
+	width: 100%; 
+	text-align: center;
+	margin-bottom: 0px;
+}
+
+.table.table-condensed.table-choices td {
+	vertical-align: middle;
+}
+
+.choice-box {
+	border: 1px solid;
+	border-color: rgb(224, 224, 224);
+	padding: 10px;
+	margin: 20px 0px;
+}
+
+table.table-choices, table.table-choices td {
+	border: none !important;
+}
+
+.panel-choices, .table {
+	margin-bottom: 5px;
+}
+
+.jumbotron.welcome {
+
+	padding-top: 10px;
+	padding-bottom: 10px;
+	
+}
+
+.dashbox {
+	background-color: #ECECEC;
+	padding: 10px 20px;
+	border-radius: 5px;
+	min-height: 200px;
+	margin-bottom: 20px;
+}
+
+.index-section {
+	padding: 20px;
+	padding-bottom: 50px;	
+	margin-bottom: 0px;
+	border-bottom: 2px solid #ECECEC;
+}
+
+@media (max-width: 414px) {
+	td {
+		font-size: 12px;
+	}
+}
+
+.login {
+	margin-top: 100px;
+	margin-bottom: 100px;
+	width: 250px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.btn-ctrl {
+	width: 250px;
+	margin-bottom: 1px;
+}
+
+@media (min-width: 768px) {
+	.btn-ctrl {
+		width: 100%;
+	}
+}
+
+.row-add {
+	padding-top: 20px;
+	padding-bottom: 50px;
+	border-bottom: 2px solid #ECECEC;
+}
+
+.ctrl-panel .col-sm-3 {
+	text-align: center;
+}
+
+#chat-history {
+	height: 200px;
+	overflow: auto;
+	background-color: #EEE;  
+	border: 1px solid #ccc;
+  	border-radius: 4px;
+  	padding: 10px;
+}
+
+#chat-history p {
+	margin-bottom: 2px;
+}
+
+#main-page {
+	height: 400px;
+	max-width: 800px;
+	background-color: rgba(87, 85, 85, 0.52);
+	border-radius: 10px;
+	text-align: center;
+	padding-top: 150px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}	
+
+@media (max-width: 500px) {
+	body {
+		background-size: 600%;
+		background-position-x: 50%;
+	}
+	
+	#main-page {
+		padding-top: 75px;
+	}
+}	

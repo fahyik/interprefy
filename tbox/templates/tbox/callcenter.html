@@ -1,0 +1,25 @@
+{% extends "tbox/base.html" %}
+{% load i18n %}
+{% load widget_tweaks %}
+{% load staticfiles %}
+
+{% block title %}Call Center{% endblock %}
+
+{% block body %}
+<div class="container">
+<div class="row">
+	<div class="col-sm-12">	
+	<div >	
+		<h1>Call Center</h1>
+		<h3>Click on one of the following available rooms:</h3>
+		{% for each in session_list %}
+		<p><a class="btn btn-default" href="{% url 'tbox:room' each.name_id %}">{{ each.name }} {{ each.lang }}</a></p>
+		{% endfor %}
+	</div>
+	</div>
+</div>
+</div>
+{% endblock %}
+
+{% block script %}
+{% endblock %}

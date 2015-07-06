@@ -1,0 +1,24 @@
+{% extends "tbox/base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<div class="container">
+<div class="row">
+	<div class="col-sm-12">	
+	<div id="main-page">	
+		<h1>Welcome to Interprefy!</h1>
+		{% if not user.is_authenticated %}
+		<h3>Please <span><a href="{% url 'auth_login' %}">login</a></span> to access the call center!</h3>
+		{% endif %}
+		
+	</div>
+	</div>
+</div>
+</div>
+{% endblock %}
+
+{% block script %}
+{% endblock %}
